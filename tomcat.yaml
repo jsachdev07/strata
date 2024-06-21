@@ -1,0 +1,30 @@
+- name: Deploy war file on tomcat
+  hosts: all
+  become: true
+  remote_user: centos
+
+  tasks:
+  - name: wait for port 22 to open on server created
+    wait_for:
+      port: 22
+      delay: 60 
+    
+  - name: Install package tomcat on server
+    package: name=tomcat state=latest
+
+  - name: Start tomcat Server
+    service: name=tomcat state=started
+
+  - name: Copy the war file on tomcat server
+    copy:
+     src: /var/lib/jenkins/workspace/ci-cd/target/addressbook.war
+     dest: /usr/share/tomcat/webapps
+    notify:
+     - Restart tomcat server
+     - Print deployment message
+
+  handlers:
+  - name: Print deployment message
+    debug: msg="Deployment complete"
+  - name: Restart tomcat server
+    service: name=tomcat state=restarted

@@ -4,7 +4,7 @@ provider "aws" {
 
 
 resource "aws_key_pair" "generated_key" {
-  key_name   = demo-key
+  key_name   = "demo-key"
   public_key = file("~/.ssh/id_rsa.pub")
 }
 

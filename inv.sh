@@ -1,1 +1,1 @@
-terraform output | awk '{print $3}' > /etc/ansible/hosts
+terraform output | awk '{print $3}' > /var/lib/jenkins/inventory

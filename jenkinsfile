@@ -45,12 +45,18 @@ pipeline
 			}
 		}
 
-		stage('Copy server IP to ansible inventory')
+		stage('create ansible inventory')
 		{
 			steps
 			{
 				sh './inv.sh'
-
+			}
+		}
+		stage('Execute ansible playbook to install tomcat and run the application')
+		{
+			steps
+			{
+				sh 'ansible-playbook -i /var/lib/jenkins/inventory  tomcat.yaml'
 			}
 		}
 

@@ -4,12 +4,6 @@
   remote_user: centos
   gather_facts: false
 
-  tasks:
-  - name: wait for port 22 to open on server created
-    wait_for:
-      port: 22
-      delay: 60 
-    
   - name: Install package tomcat on server
     package: name=tomcat state=latest
 

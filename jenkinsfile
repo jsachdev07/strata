@@ -49,7 +49,7 @@ pipeline
 		{
 			steps
 			{
-				sh 'terraform output | awk '{print $3}''
+				sh 'terraform output | awk '{print $3}' > /etc/ansible/hosts'
 
 			}
 		}

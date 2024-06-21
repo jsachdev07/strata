@@ -2,6 +2,7 @@
   hosts: all
   become: true
   remote_user: centos
+  gather_facts: false
 
   tasks:
   - name: wait for port 22 to open on server created

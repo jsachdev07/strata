@@ -3,6 +3,7 @@
   become: true
   remote_user: centos
   gather_facts: false
+  tasks:
 
   - name: Install package tomcat on server
     package: name=tomcat state=latest

@@ -56,7 +56,7 @@ pipeline
 		{
 			steps
 			{
-				sh 'ansible-playbook -i /var/lib/jenkins/inventory  tomcat.yaml'
+				sh 'ansible-playbook tomcat.yaml'
 			}
 		}
 

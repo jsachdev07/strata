@@ -1,2 +1,2 @@
 terraform output | awk '{print $3}' > /var/lib/jenkins/inventory
-sleep 300
+sleep 180

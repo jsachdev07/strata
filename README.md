@@ -18,9 +18,12 @@ Before you start make sure to perform below things manually
 8. make sure you perform "aws configure" and add your access and secret key to server
 9. copy the .aws folder to /var/lib/Jenkins/.aws
 10. give permission to Jenkins user to read .aws folder --> chmod +r /var/lib/Jenkins/.aws/*
-11. add below setting in /etc/ansible/ansible.cfg
+11. add below setting in /etc/ansible/ansible.cfg under defaults section
 
 [defaults]
+
 host_key_checking = False
+
 inventory = /var/lib/jenkins/inventory
+
 private_key_file = /tmp/id_rsa

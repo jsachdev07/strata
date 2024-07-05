@@ -20,8 +20,6 @@ Before you start make sure to perform below things manually
 10. give permission to Jenkins user to read .aws folder --> chmod +r /var/lib/Jenkins/.aws/*
 11. add below setting in /etc/ansible/ansible.cfg under defaults section
 
-Block code "fences"
-
 ```
 [defaults]
 host_key_checking = False

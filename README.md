@@ -1,4 +1,4 @@
-**Addressbook Tutorial**
+## Addressbook Tutorial
 
 In this project we need to perform the CI-CD for our addressbook application developed in JAVA language.
 
